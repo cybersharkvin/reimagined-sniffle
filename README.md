@@ -1,6 +1,20 @@
 # reimagined-sniffle
 GBNF programmatic extraction
 
+## Usage
+
+Run `generate_gbnf.py` to build the grammar from the annotated functions. The
+tests rely on `todo.gbnf` being up to date.
+
+```bash
+python generate_gbnf.py
+pytest
+```
+
+The grammar structure follows the same conventions as those found in
+[llama.cpp's grammar examples](https://github.com/ggml-org/llama.cpp/tree/master/grammars).
+
+
 # Context: GenAI Security
 
 Since Grammar-Constrained Decoding is an external security control (it has to be) it's not so much a function of the LLM as it is a function of the loader.

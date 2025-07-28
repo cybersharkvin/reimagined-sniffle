@@ -1,0 +1,15 @@
+start: call
+call: "{" ITEM ":" todo "}"
+todo: "{" ID ":" NUMBER "," TITLE ":" STRING "," PRIORITY_KEY ":" PRIORITY "," DUE ":" (DATE | "null") "}"
+ITEM: "\"item\""
+ID: "\"id\""
+TITLE: "\"title\""
+PRIORITY_KEY: "\"priority\""
+DUE: "\"due\""
+PRIORITY: "\"low\"" | "\"medium\"" | "\"high\""
+DATE: /"\d{4}-\d{2}-\d{2}"/
+STRING: ESCAPED_STRING
+NUMBER: /-?\d+/
+%import common.ESCAPED_STRING
+%import common.WS
+%ignore WS
